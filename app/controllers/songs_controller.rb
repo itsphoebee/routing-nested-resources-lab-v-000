@@ -5,7 +5,9 @@ class SongsController < ApplicationController
       artist = Artist.find(params[:artist_id])
       if artist.present?
         @songs = artist.songs
-      .songs
+      else
+        redirect_to artists_path
+
     else
       @songs = Song.all
     end
