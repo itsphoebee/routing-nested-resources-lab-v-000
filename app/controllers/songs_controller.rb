@@ -11,7 +11,7 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
     binding.pry
-    if !@song.present?
+    if @song.blank?
       redirect_to artist_songs(params[:artist_id])
     end
   end
