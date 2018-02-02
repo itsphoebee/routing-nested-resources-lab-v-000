@@ -2,8 +2,9 @@ require 'pry'
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
-      binding.pry
-      @songs = Artist.find(params[:artist_id]).posts
+      current_artist = Artist.find(params[:artist_id])
+      if current_artist
+        @songs = current_artist.posts
     else
       @songs = Song.all
     end
