@@ -1,3 +1,4 @@
+require 'pry'
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
