@@ -8308,3 +8308,5 @@ Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
 Processing by SongsController#show as HTML
   Parameters: {"id"=>"7"}
   [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 12345]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1234566]]
