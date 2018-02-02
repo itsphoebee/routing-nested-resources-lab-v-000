@@ -10,7 +10,7 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
     if !@song.present?
-      redirect_to artist_songs(artist_id)
+      redirect_to artist_songs(params[:artist_id])
     end
   end
 
