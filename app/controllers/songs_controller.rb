@@ -1,15 +1,6 @@
-require 'pry'
 class SongsController < ApplicationController
   def index
-    if params[:artist_id]
-      current_artist = Artist.find(params[:artist_id])
-      if current_artist.present?
-        @songs = current_artist.posts
-      else
-        redirect_to artists_path
-    else
-      @songs = Song.all
-    end
+    @songs = Song.all
   end
 
   def show
@@ -59,3 +50,4 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
+
