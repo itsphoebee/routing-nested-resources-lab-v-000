@@ -2,12 +2,11 @@ require 'pry'
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
-      artist = Artist.find(params[:artist_id])
-      if artist
-        @songs = artist.songs
-      else
+      @artist = Artist.find(params[:artist_id])
+      if @artist.nil?
         redirect_to artists_path
-      end
+      else
+        @songs = @artist.songs
     else
       @songs = Song.all
     end
