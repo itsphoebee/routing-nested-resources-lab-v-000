@@ -12,7 +12,6 @@ class SongsController < ApplicationController
     if !@song.present?
       redirect_to artist_songs(artist_id)
     end
-
   end
 
   def new
