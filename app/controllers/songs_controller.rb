@@ -2,7 +2,7 @@ require 'pry'
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
-      artist = Artist.find_by(id:params[:artist_id]) #find returns error if not found, find_by return nil
+      artist = Artist.find(params[:artist_id]) #find returns error if not found, find_by return nil
       if artist.nil?
         redirect_to artists_path, alert: "Artist not found"
       else
